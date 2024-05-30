@@ -3,6 +3,10 @@ import './style.css';
 import Right1 from './components/Right1';
 import store from './store/index';
 import { Provider  } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import persistStore from 'redux-persist/es/persistStore';
+
+export let persistor = persistStore(store);
 
 function App() {
   return (
@@ -10,8 +14,10 @@ function App() {
       <h1>Root</h1>
       <div id="grid">
         <Provider store={store}>
-          <Left1 />
-          <Right1 />
+          <PersistGate loading={null} persistor={persistor}>
+            <Left1 />
+            <Right1 />
+          </PersistGate>
         </Provider>
       </div>
     </div>
