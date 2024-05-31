@@ -9,7 +9,7 @@ import numberReducer from "./reducers/NumberReducer";
 
 const store = configureStore({
     reducer: {
-        numberReducer
+        number: numberReducer
     }
 });
 
