@@ -18,13 +18,13 @@ import persistReducer from 'redux-persist/es/persistReducer';
 // const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 const reducers = combineReducers({
-    numberReducer
+    number: numberReducer
 });
 
 const persistConfig = {
     key: 'root',
     storage: sessionStorage,
-    whitelist: ['numberReducer']
+    whitelist: ['number']
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
